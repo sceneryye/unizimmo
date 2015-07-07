@@ -1,0 +1,102 @@
+
+<div class="row">
+    <div class="columns small-12">
+        <h3><%=@good.name %></h3>
+    </div>
+</div>
+<div class="row">
+    <div class="columns small-12 medium-8">
+        <div class="row">
+        <div class="columns small-12"><a class="th" href="#"><img src="<%=@goods_pics[0] %>" style="width:100%"></a></div>
+        </div>
+        <ul class="clearing-thumbs small-block-grid-4 medium-block-grid-6 " data-clearing>
+            <%@goods_pics.each do |pic|%>
+              <li><a class="th" href="<%=pic%>"><img src="<%=pic%>" style="width:100%"></a></li>
+            <%end%>
+        </ul>
+    </div>
+    <div class="columns small-12 medium-4">
+        <%=form_for :product,:url=>add_cart_index_path do |f|%>
+		    <%=f.hidden_field :goods_id,:value=>@good.goods_id%>
+		    <%=f.hidden_field :type_id,:value=>@good.type_id%> 
+
+            <ul class="pricing-table">              
+
+                <li class="price"> 标配起团价
+                <%# if signed_in? %>
+		           ￥<span id="product_price"><%=(@good.price/10000).to_i%>万
+		        <%# else %>
+		            <!-- <a href="/login" class="login" style="font-size:14px;color:#D30000;">[会员专享]</a> -->
+		       <%#end%>
+                <li class="bullet-item">4S店价:￥<span style="text-decoration:line-through;"><%=(@good.mktprice/10000).to_i%>万
+                <li class="bullet-item">定金:￥10000</li>
+                <%=render :partial=>"store/goods/product/new_spec",:locals=>{ :good=>@good }%>
+                <li class="description"><%=raw @good.intro%></li> 
+                <li class="bullet-item" style="display:none">规格:<%=raw @good.spec_info%></li>
+                <%if @good.tag=='羊年团洋车'%>
+                 <li class="description">
+                    <ul>
+                        <li>本商品参加<h5><a href="/pages/yntyc" target="_blank">《羊年团洋车》活动</a></h5></li>
+                        <li>当前已有<span><%=@people%></span>人参加活动</li>
+                        <li>实时团购价是<span>￥<%=@current_price%>元</span></li>
+                    </ul>
+                </li> 
+                <li class="cta-button"><a href="/orders/express?goods_id=<%=@good.goods_id%>" class="button btn-success btn-lg">选中此车</a>
+                <%else%>
+                <%=f.submit "加入购物车",:class=>"button btn-success btn-lg"%>
+                <%end%>
+                <a href="/compare/add?goods_id=<%=@good.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">产品比较</a></li>
+                <li style="display:none"><%if signed_in?%>
+			      <%=link_to "已收藏",unfav_good_path(@good,:rel=>"good_#{@good.goods_id}"),:class=>"add_to_favorites",:remote=>true,:method=>:put,:confirm=>"是否取消收藏?" if @good.favorited_by?(@user)%>
+			      <%=link_to "加入我的收藏夹",fav_good_path(@good,:rel=>"good_#{@good.goods_id}"),:class=>"add_to_favorites",:remote=>true,:method=>:put unless @good.favorited_by?(@user)%>
+			      <%else%>
+			        <a href="javascript:void(0);" class="add_to_favorites login">加入我的收藏夹</a>
+			      <%end%>
+			    </li>
+            </ul>
+        <%end%> 
+    </div>
+</div>
+<div class="row">
+    <div class="columns small-12">
+
+<hr>
+        <h4> 商品详情</h4>
+        <p class="lead">
+            <%=@good.desc.html_safe if @good.desc%>
+            
+<hr>
+        </p>
+    </div>               
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+      <%if @good.has_cols? %>
+        <div id="new_look">
+        	<%= render "new_look2"%>
+        	<%= render "reco_new_look" if @good.reco_collocation_goods.count > 0%>
+        </div>
+        <%else%>
+        <%= render "reco_goods" %>
+        <%end%>
+    </div>
+</div>
+
+<script type="text/javascript">
+  window.onload = function() {
+    document.getElementById("preloader").style.display = 'none';
+  }
+</script>
+<script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery-ui-1.9.2.custom.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_jcarousel.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-popover.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+<script src="/assets/store/new_base.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.countdown.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.jqzoom-core.js?body=1" type="text/javascript"></script>
+<script src="/assets/store/new_goods.js?body=1" type="text/javascript"></script>

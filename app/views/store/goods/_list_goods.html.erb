@@ -1,0 +1,119 @@
+<ul class="example-orbit-content" data-orbit data-options="slide_number: false;timer: false;bullets: false">
+  <li data-orbit-slide="headline-1">
+    <div>
+      <ul id="topnav" class="medium-block-grid-6 large-block-grid-12">
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/MASERATI.jpg" alt="玛莎拉蒂"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LAND ROVER.jpg" alt="路虎"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/PORSCHE.jpg" alt="保时捷"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/honda.jpg" alt="本田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/BMW.jpg" alt="宝马"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/toyota.jpg" alt="丰田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/FORD.jpg" alt="福特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/audi.jpg" alt="奥迪"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/mercedes.jpg" alt="奔驰"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/fiat.jpg" alt="菲亚特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/hyundai.jpg" alt="现代"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LOTUS.jpg" alt="莲花"></a></li>
+          </ul>
+    </div>
+  </li>
+  <li data-orbit-slide="headline-2">
+    <div>
+      <ul id="topnav" class="medium-block-grid-6 large-block-grid-12">
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/MASERATI.jpg" alt="玛莎拉蒂"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LAND ROVER.jpg" alt="路虎"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/PORSCHE.jpg" alt="保时捷"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/honda.jpg" alt="本田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/BMW.jpg" alt="宝马"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/toyota.jpg" alt="丰田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/FORD.jpg" alt="福特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/audi.jpg" alt="奥迪"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/mercedes.jpg" alt="奔驰"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/fiat.jpg" alt="菲亚特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/hyundai.jpg" alt="现代"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LOTUS.jpg" alt="莲花"></a></li>
+          </ul>
+    </div>
+  </li>
+</ul>
+<div class="sorter">
+	<span>排序: </span>
+	<%
+		query_hash = {}
+		# query_hash[:color] = params[:color] if params[:color]
+		# query_hash[:brand] = params[:brand] if params[:brand]
+		# query_hash[:cat_id] = params[:cat_id] if params[:cat_id]
+		params_hash = params.dup
+
+		params_hash.delete(:controller)
+		params_hash.delete(:action)
+		params_hash.delete(:order)
+
+		query = params_hash.to_query
+	%>
+
+	<%if params[:order].blank?%>
+		<%=link_to "价格&uarr;".html_safe,"?order=price-asc&#{query}",:title=>"价格从低往高"%>
+	<%elsif  params[:order] == "price-asc"%>
+		<%=link_to "价格&uarr;".html_safe,"?order=price-desc&#{query}",:title=>"价格从低往高"%>
+	<%else params[:order] =='price-desc'%>
+		<%=link_to "价格&darr;".html_safe,"?order=price-asc&#{query}",:title=>"价格从高往低"%>
+	<%end%>
+
+	<%=link_to "销量&darr;".html_safe,"?order=buy_count-desc&#{query}",:title=>"价格从高往低"%>
+	<%=link_to "人气&darr;".html_safe,"?order=view_count-asc&#{query}",:title=>"人气从高往低"%>
+
+	<div class="pagination top">
+		<%=will_paginate @goods,:container=>false if @goods%>
+	</div>
+</div>
+
+<div class="row"> 
+        <div class="columns small-12">
+          <div class="box-content">
+            <div class="box-product">
+              <ul class="box clearing-thumbs medium-block-grid-3 small-block-grid-1">
+               <%@goods.each do |goods|%>
+                <li> 
+                  <div class="row">
+                  <div class="columns medium-12 small-6"> 
+                  <div class="prod_hold"> 
+                    <%=link_to good_path(goods.bn), :target=>"_blank",:class=>"wrap_link" do %>
+                      <span class="image"><%=image_tag goods.list_default_pic,:alt=>goods.name,:class=>"default"%></span> 
+                    <%end%>
+                    <div class="pricetag_small">
+                      <span class="new_price">¥ <%=(goods.price/10000).to_i%>万</span>  
+                      <span class="old_price">¥ <%=(goods.mktprice/10000).to_i%>万</span> 
+                    </div>
+                    <div class="info">
+                      <h3><%=goods.name%></h3>
+                      <p><%=goods.intro%></p>
+                      <a class="add_to_cart_small" href="#">加入购物车</a> 
+                      <a class="wishlist_small" href="#">加入收藏夹</a> 
+                      <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">加入产品对比</a> 
+                    </div>
+                  </div>
+                </div>
+                <div class="columns small-6 show-for-small">
+                  <div class="info">
+                      <h3><%=goods.name%></h3>
+                      <p><%=goods.intro%></p>
+                      <a class="button tiny add_to_cart_small" href="#">加入购物车</a> <br>
+                      <a class="wishlist_small" href="#">收藏</a> &nbsp;
+                      <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">产品对比</a> 
+                    </div>
+                </div>
+              </div>
+                </li>
+               <%end%>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+<div class="clearfix"></div>
+
+<div class="pagination">
+	<%=will_paginate @goods,:container=>false if @goods%>
+</div>

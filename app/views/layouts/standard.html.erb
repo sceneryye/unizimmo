@@ -1,0 +1,263 @@
+<script>
+function isWeixinBrowser(){
+    var ua = navigator.userAgent.toLowerCase();
+    return (/micromessenger/.test(ua)) ? true : false ;
+}
+<% return_url={:return_url => request.url.sub('http://trade','').force_encoding('UTF-8')}.to_query%>
+var iswxb= isWeixinBrowser();
+
+ if ('<%=@user.nil?%>'==='true' && isWeixinBrowser() ){
+        location.href = "/auto_login?id=1&<%=return_url%>";
+ }
+</script>
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="zh" > <![endif]-->
+<html class="no-js" lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <%if @title%>
+        <%=@title%>
+      <%else%>
+        滋贸万国
+      <%end%>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+    <link href="/stylesheets/foundation-icons.css?body=1" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+  
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header" class="show-for-medium-up">
+      <div class="inner">
+      <section class="main-section">
+      <!--顶部导航-->
+      <!-- <div class="contain-to-grid sticky show-for-medium-up"> -->
+        <div class="row">
+        <div class="columns small-4 center">
+            <ul class="main_menu menu_left">
+              <li><a href="/member">会员中心</a></li>     
+              <%if @user%>
+              <li><a href="#"><%=@user.name%></a></li>
+              <%else%>
+              <li><a href="/login">登录/注册</a></li>       
+              <%end%>
+              <li><a href="#">欢迎光临!</a>
+              </ul></div>
+            <div  class="columns small-8 center">
+            <div id="logo" ><a href="/" title="首页"><img src="/image/logo.png" alt="logo" /></a></div>
+            <ul class="main_menu menu_right">
+              <li><a href="/compare">产品比较</a></li>
+              <li><a href="/member/favorites">收藏夹 <b></b></a></li>
+              <li><a href="/cart">购物车</a></li>
+              <li><a href="/member/orders">我的订单</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div id="welcome" style="display:none"> 欢迎光临!
+        <%if @user%>
+           <a href="#"><%=@user.name%></a>&nbsp;/&nbsp; <a href="/logout">退出登录</a>
+        <%else%>
+          <a href="/login">登录/注册</a>
+        <%end%>
+      </div>  
+      <div class="row">
+        <div class="columns small-12 menu">
+          <ul id="topnav" class="medium-block-grid-6 large-block-grid-12">
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/MASERATI.jpg" alt="玛莎拉蒂"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LAND ROVER.jpg" alt="路虎"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/PORSCHE.jpg" alt="保时捷"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/honda.jpg" alt="本田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/BMW.jpg" alt="宝马"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/toyota.jpg" alt="丰田"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/FORD.jpg" alt="福特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/audi.jpg" alt="奥迪"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/mercedes.jpg" alt="奔驰"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/fiat.jpg" alt="菲亚特"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/hyundai.jpg" alt="现代"></a></li>
+            <li><a href="/gallery/1?gtype=1"><img src="/image/brands/LOTUS.jpg" alt="莲花"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- END OF HEADER --> 
+  <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar show-for-small" style="margin-bottom:23px;">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+      <section class="middle tab-bar-section">
+        <div class="row">
+          <div class="columns small-3" style="margin-top:10px">
+            <a href="/cart" style="color:white;"><i class="step fi-shopping-cart size-24"></i></a>
+          </div>
+          <div class="columns small-6">
+            <h1 class="title"><a href="/"><img src="/image/logo.png" style="height:70px" alt="滋贸万国" /></a></h1>
+          </div>
+         <div class="columns small-3" style="margin-top:10px">
+            <a data-dropdown="contentDrop" aria-controls="contentDrop" aria-expanded="false"  style="color:white;">
+              <i class="step fi-magnifying-glass size-24"></i>
+            </a>
+          </div>
+      </div>
+      </section>
+      <section class="right-small" style="margin-top:10px">
+        <a class="right-off-canvas-toggle" href="/member"  style="color:white;margin:10px 0 0 13px;"><span><i class="step fi-torso size-24"></i></span></a>
+      </section>
+    </nav>
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>品牌</label></li>
+         <li><a href="/gallery/1?gtype=1">玛莎拉蒂</a></li>
+          <li><a href="/gallery/1?gtype=1">路虎</a></li>
+          <li><a href="/gallery/1?gtype=1">保时捷</a></li>
+          <li><a href="/gallery/1?gtype=1">本田</a></li>
+          <li><a href="/gallery/1?gtype=1">宝马</a></li>
+          <li><a href="/gallery/1?gtype=1">丰田</a></li>
+          <li><a href="/gallery/1?gtype=1">福特</a></li>
+          <li><a href="/gallery/1?gtype=1">奥迪</a></li>
+          <li><a href="/gallery/1?gtype=1">奔驰</a></li>
+          <li><a href="/gallery/1?gtype=1">庞巴迪</a></li>
+          <li><a href="/gallery/1?gtype=1">北极星</a></li>
+          <li><a href="/gallery/1?gtype=1">川崎</a></li>
+          <li><a href="/gallery/1?gtype=1">宾斯特</a></li>
+          <li><a href="/gallery/1?gtype=1">特拉斯</a></li>
+          <li><a href="/gallery/1?gtype=1">Hobby</a></li>
+          <li><a href="/gallery/1?gtype=1">雪拂兰</a></li>
+          <li><a href="/gallery/1?gtype=1">尼桑</a></li>
+          <li><a href="/gallery/1?gtype=1">林肯</a></li>
+      </ul>
+    </aside>
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label><a href="/member">个人中心</a></label></li>
+        <li><a href="member/orders">我的订单</a></li>
+        <li><a href="/cart">我的购物车</a></li>
+        <li><a href="/compare">产品比较</a></li>
+        <li><a href="/profile">个人信息</a></li>
+        <li><a href="/member_addrs">我的收货地址</a></li>
+        <li><a href="/member/favorites">我的收藏  </a></li>
+      </ul>
+    </aside>
+    <div class="f-dropdown content medium" data-dropdown-content="" id="contentDrop" aria-hidden="true" tabindex="-1">
+      <input><a class="button" href="#">搜索</a>
+    </div>
+    <%= yield%>
+   
+   
+<!-- END OF CONTENT -->
+<!-- PRE-FOOTER -->
+<div id="pre_footer" class="show-for-medium-up">
+  <div class="inner">
+
+  </div>
+</div>
+<!-- END OF PRE-FOOTER --> 
+
+<!-- FOOTER -->
+
+<div id="footer" class="show-for-medium-up">
+<div  class="row">
+  <div class="inner columns small-12">
+    <div class="column_big"> 
+      <!-- FOOTER MODULES AREA -->
+      <div class="footer_modules">
+        <h3>关于滋贸万国精品汇</h3>
+        <p>自贸区高端消费品展销体验创新平台——“滋贸万国精品汇”</p>
+      </div>
+      <!-- END OF FOOTER MODULES AREA -->
+      <div class="footer_social">
+          <h3>微信关注</h3>
+          <!-- AddThis Button BEGIN -->
+          <div>
+              <img src="/image/qrcode.jpg" style="width:100px">
+          </div>
+          
+          <!-- AddThis Button END --> 
+        </div>
+      </div>
+    <div class="column_small">
+      <h3>个人中心</h3>
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">个人中心</a></li>
+        <li><a href="#">我的订单</a></li>
+        <li><a href="#">收藏夹</a></li>
+        <li><a href="#">购物车</a></li>
+        <li><a href="#">产品比较</a></li>
+      </ul>
+    </div>
+    <div class="column_small">
+      <h3>服务信息</h3>
+      <ul>
+        <li><a href="about.html">联系我们</a></li>
+        <li><a href="#">购物指南</a></li>
+        <li><a href="#">支付方式</a></li>
+        <li><a href="#">送货方式</a></li>
+        <li><a href="#">售后服务</a></li>
+        <li><a href="#">条款</a></li>
+      </ul>
+    </div>
+    <div class="column_small">
+      <h3>网站导航</h3>
+      <ul>
+        <li><a href="#">品牌</a></li>
+        <li><a href="#">产品分类</a></li>
+        <li><a href="#">友情链接</a></li>
+        <li><a href="#">网站地图</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div>
+      <p>&copy;2015 &nbsp;滋贸万国</p></div>
+    <span class="copyright">技术支持 <a href="http://www.trade-v.com">普慧信息科技有限公司</a> </span> 
+    </div>
+</div>
+</div>
+<!-- END OF FOOTER -->
+<a class="exit-off-canvas"></a>
+ 
+  </div>
+</div>
+
+ <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/js/jquery.roundabout.min2.4.js" type="text/javascript"></script>
+<script src="/bower_components/foundation/js/foundation.min.js"></script>
+<script src="/bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+<script src="/js/app.js"></script>
+   
+<script type="text/javascript">
+   $(document).ready(function() {
+    var interval;
+    $('ul#myRoundabout')
+    .roundabout({
+        'btnNext': '.next_round',
+      'btnPrev': '.previous_round' 
+      }
+      )
+    .hover(
+    function() {
+
+    clearInterval(interval);
+    },
+    function() {
+
+    interval = startAutoPlay();
+    });
+
+    interval = startAutoPlay();
+    });
+    function startAutoPlay() {
+    return setInterval(function() {
+    // $('ul#myRoundabout').roundabout_animateToPreviousChild();
+    }, 3000);
+    
+  } 
+</script>
+  </body>
+</html>

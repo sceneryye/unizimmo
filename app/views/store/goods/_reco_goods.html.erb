@@ -1,0 +1,39 @@
+<%if @recommend_goods.size > 0%>
+<div class="row">
+  <div class="columns small-12">
+    <h3>推荐商品</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="columns small-12">
+    <ul class="small-block-grid-2 medium-block-grid-4">
+      <%@recommend_goods.each do |good|%>
+      <li class="portfolio-items">
+        <div class="good-pic">
+            <%=link_to good_path(good.bn,:tag=>@tag&&@tag.tag_name) do %>
+                <%=image_tag good.rec_image,:style=>"width:90%",:alt=>good.name%>
+            <%end%>
+        </div>
+        <div class="good-info">
+          <div class="name">
+              <a href="/products/<%=good.bn%>" target="_blank"><%=good.name%></a>
+          </div>
+          <div class="prices">
+            <span>
+              会员价: 
+              <%if signed_in?%>
+                &yen;<%=good.price%>
+              <%else%>
+                <a href="javascript:void(0)" class="login">[会员专享]</a>
+              <%end%>
+            </span><br>
+            <span class="mtkprice">市场价: &yen;<%=good.mktprice%></span>
+          </div>
+
+        </div>
+      </li>
+      <%end%>
+    </ul>
+  </div>
+</div>
+<%end%>

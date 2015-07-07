@@ -1,0 +1,87 @@
+<%=render "shared/metable", :resource => @page %>
+<%=@page.body.html_safe if @page.body%>
+<%if @goods%>
+      <div class="row"> 
+        <!-- <div class="columns small-12 medium-6 middle">        	
+          <a name="cars"><h3 class="heading-title">已有<span><%=@people%></span>人参加团购</h3></a>
+        </div> -->
+         <div class="columns small-12 middle">
+
+              <a name="discount"><h4 class="heading-title">本次团购每辆车型减:￥<%=@people*1000%>元（实时变化)</h4></a>          
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="columns small-12">
+         <p>&nbsp;3、&nbsp;&nbsp;团购车型
+          <div class="box-content">
+            <div class="box-product">
+              <ul class="box clearing-thumbs medium-block-grid-5 small-block-grid-1">
+                <%@goods.each do |goods|%>
+                <li> 
+                  <div class="row">
+                  <div class="columns medium-12 small-5"> 
+                    <div class="prod_hold"> 
+                      <%=link_to good_path(goods.bn), :target=>"_blank",:class=>"wrap_link" do %>
+                        <span class="image"><%=image_tag goods.list_default_pic,:alt=>goods.name,:class=>"default"%><br>
+                          <h5 class="show-for-medium-up"><%=goods.name%></h5>
+                        </span> 
+                      <%end%>
+                      <div class="pricetag_small show-for-medium-up">
+                        <span class="new_price">¥ <%=format("%.1f",(goods.price/10000-@people*0.1))%>万</span> 
+                        <span class="old_price">¥ <%=(goods.mktprice/10000).to_i%>万</span> 
+                      </div>
+                      <div class="info">
+                        <p><%=image_tag goods.list_default_pic,:alt=>goods.name,:class=>"default"%></p>
+                        <h3><%=goods.name%></h3>
+                        <p>
+                          实时团购价：<%=format("%.1f",(goods.price/10000-@people*0.1))%>万<br>
+                          标配起团价：<%=format("%.1f",(goods.price/10000))%>万<br>
+                          4S店售价：<%=(goods.mktprice/10000).to_i%>万<br>
+                        <a class="add_to_cart_small" href="#">加入购物车</a> 
+                        <a class="wishlist_small" href="#">加入收藏夹</a> 
+                        <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">加入产品对比</a> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns small-7 show-for-small">
+                    <div>
+                        <h5> <%=link_to goods.name, good_path(goods.bn), :target=>"_blank",:class=>"wrap_link"%></h5>
+                        <p>
+                          实时团购价：<%=format("%.1f",(goods.price/10000-@people*0.1))%>万<br>
+                          标配起团价：<%=format("%.1f",(goods.price/10000))%>万<br>
+                          4S店售价：<%=(goods.mktprice/10000).to_i%>万<br>
+                        </p>
+                        <p><a class="wishlist_small" href="#">收藏</a> &nbsp;
+                        <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">产品对比</a> 
+                      </p>
+                    </div>
+                  </div>
+                  </div>
+                </li>
+               <%end%>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="columns small-12">
+              <p>您的车就是您的名片，金羊年春节，换张名片吧！
+                <p><a href="/images/tuan_contract.docx">团购订车合约</a>&nbsp;&nbsp;&nbsp;<a href="/pages/yntyc-tglc">团购订车流程</a>
+                <p>更多品牌车型，不参加本次团购，如需订购请咨询滋程国际专业平行进口汽车抢购顾问，抢购电话：021-68031889
+                <ul>
+                  <li>宝马 X5, X6</li>
+                  <li>路虎 极光</li>
+                  <li>丰田 阿尔法，科鲁兹，霸道</li>
+                  <li>奥迪 Q7，A8</li>
+                  <li>福特 猛禽</li>
+                  <li>各品牌定制房车及改装跑车</li>
+                </ul>
+
+            <p>更多信息关注我们“滋贸精品汇”
+
+            <p>   <img src="/image/qrcode.jpg" />
+        </div>
+      </div>
+<%end%>

@@ -1,0 +1,648 @@
+<%=render "shared/metable", :resource=>nil%>
+
+<%=content_for :head do%>
+<%= stylesheet_link_tag "store/brands" %>
+<%end%>
+
+<%=content_for :cover do%>
+	<%=raw Ecstore::Config.get(:brand_cover) %>
+<%end%>
+
+<%render "store/shared/brand_position"%>
+
+<div class="row">
+	<div class="columns small-12"
+
+	<div class="title">品牌索引</div>
+
+	<table>
+
+		<tbody><tr>
+			<td id="ctl00_ctlTableData" class="hatchback convertible estate active">
+				<div>
+					<a id="ctl00_lnkManufacturerNoJs" href="/brands/abarth/"><img id="ctl00_imgManufacturerNoJs" width="50" src="/image/brands/Abarth.jpg" alt="Abarth">
+						<span>Abarth</span>
+					</a>
+				</div>
+			</td>
+			<td id="ctl01_ctlTableData" class="hatchback saloon estate coupe convertible active">
+				<div>
+					<a id="ctl01_lnkManufacturerNoJs" href="/brands/alfa-romeo/"><img id="ctl01_imgManufacturerNoJs" width="50" src="/image/brands/ALFA ROMEO.jpg" alt="Alfa Romeo">
+						<span>Alfa Romeo</span>
+					</a>
+				</div>
+			</td>
+			<td id="ctl02_ctlTableData" class="hatchback coupe convertible saloon active">
+				<div>
+					<a id="ctl02_lnkManufacturerNoJs" href="/brands/aston-martin/"><img id="ctl02_imgManufacturerNoJs" width="50" src="/image/brands/ASTON MARTIN.jpg" alt="Aston Martin">
+						<span>Aston Martin</span>
+					</a>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl03_ctlTableData" class="saloon estate hatchback convertible 4x4 coupe active">
+				<div>
+					<a id="ctl03_lnkManufacturerNoJs" href="/brands/audi/"><img id="ctl03_imgManufacturerNoJs" width="50" src="/image/brands/audi.jpg" alt="Audi">
+						<span>Audi</span>
+					</a>
+				</div>
+			</td>
+			<td id="ctl04_ctlTableData" class="saloon coupe convertible active">
+				<div>
+					<a id="ctl04_lnkManufacturerNoJs" href="/brands/bentley/"><img id="ctl04_imgManufacturerNoJs" width="50" src="/image/brands/BENTLEY.jpg" alt="Bentley">
+						<span>Bentley</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl04_imgManufacturer" width="50" src="/image/brands/BENTLEY.jpg" alt=""> Bentley</p>
+				</div>
+			</td>
+			<td id="ctl05_ctlTableData" class="hatchback coupe convertible mpv saloon estate 4x4 active">
+				<div>
+					<a id="ctl05_lnkManufacturerNoJs" href="/brands/bmw/"><img id="ctl05_imgManufacturerNoJs" width="50" src="/image/brands/BMW.jpg" alt="BMW">
+						<span>BMW</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl05_imgManufacturer" width="50" src="/image/brands/BMW.jpg" alt=""> BMW</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl06_ctlTableData" class="coupe active">
+				<div>
+					<a id="ctl06_lnkManufacturerNoJs" href="/brands/bugatti/"><img id="ctl06_imgManufacturerNoJs" width="50" src="/image/brands/Bugatti.jpg" alt="Bugatti">
+						<span>Bugatti</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl06_imgManufacturer" width="50" src="/image/brands/Bugatti.jpg" alt=""> Bugatti</p>
+				</div>
+			</td>
+			<td id="ctl07_ctlTableData" class="saloon estate 4x4 convertible active">
+				<div>
+					<a id="ctl07_lnkManufacturerNoJs" href="/brands/cadillac/"><img id="ctl07_imgManufacturerNoJs" width="50" src="/image/brands/CADILLAC.jpg" alt="Cadillac">
+						<span>Cadillac</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl07_imgManufacturer" width="50" src="/image/brands/CADILLAC.jpg" alt=""> Cadillac</p>
+				</div>
+			</td>
+			<td id="ctl08_ctlTableData" class="convertible active">
+				<div>
+					<a id="ctl08_lnkManufacturerNoJs" href="/brands/caterham/"><img id="ctl08_imgManufacturerNoJs" width="50" src="/image/brands/caterham.jpg" alt="Caterham">
+						<span>Caterham</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl08_imgManufacturer" width="50" src="/image/brands/caterham.jpg" alt=""> Caterham</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl09_ctlTableData" class="hatchback 4x4 coupe convertible saloon estate mpv active">
+				<div>
+					<a id="ctl09_lnkManufacturerNoJs" href="/brands/chevrolet/"><img id="ctl09_imgManufacturerNoJs" width="50" src="/image/brands/Chevrolet_Logo.jpg" alt="Chevrolet">
+						<span>Chevrolet</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl09_imgManufacturer" width="50" src="/image/brands/Chevrolet_Logo.jpg" alt=""> Chevrolet</p>
+				</div>
+			</td>
+			<td id="ctl10_ctlTableData" class="saloon estate coupe convertible hatchback mpv active">
+				<div>
+					<a id="ctl10_lnkManufacturerNoJs" href="/brands/chrysler/"><img id="ctl10_imgManufacturerNoJs" width="50" src="/image/brands/chrysler.jpg" alt="Chrysler">
+						<span>Chrysler</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl10_imgManufacturer" width="50" src="/image/brands/chrysler.jpg" alt=""> Chrysler</p>
+				</div>
+			</td>
+			<td id="ctl11_ctlTableData" class="saloon hatchback mpv estate convertible coupe 4x4 active">
+				<div>
+					<a id="ctl11_lnkManufacturerNoJs" href="/brands/citroen/"><img id="ctl11_imgManufacturerNoJs" width="50" src="/image/brands/citroen.jpg" alt="Citroën">
+						<span>Citroën</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl11_imgManufacturer" width="50" src="/image/brands/citroen.jpg" alt=""> Citroën</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl12_ctlTableData" class="coupe convertible active">
+				<div>
+					<a id="ctl12_lnkManufacturerNoJs" href="/brands/corvette/"><img id="ctl12_imgManufacturerNoJs" width="50" src="/image/brands/corvette.jpg" alt="Corvette">
+						<span>Corvette</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl12_imgManufacturer" width="50" src="/image/brands/corvette.jpg" alt=""> Corvette</p>
+				</div>
+			</td>
+			<td id="ctl13_ctlTableData" class="4x4 estate hatchback active">
+				<div>
+					<a id="ctl13_lnkManufacturerNoJs" href="/brands/dacia/"><img id="ctl13_imgManufacturerNoJs" width="50" src="/image/brands/dacia.jpg" alt="Dacia">
+						<span>Dacia</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl13_imgManufacturer" width="50" src="/image/brands/dacia.jpg" alt=""> Dacia</p>
+				</div>
+			</td>
+			<td id="ctl14_ctlTableData" class="saloon hatchback 4x4 estate mpv active">
+				<div>
+					<a id="ctl14_lnkManufacturerNoJs" href="/brands/daewoo/"><img id="ctl14_imgManufacturerNoJs" width="50" src="/image/brands/daewoo.jpg" alt="Daewoo">
+						<span>Daewoo</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl14_imgManufacturer" width="50" src="/image/brands/daewoo.jpg" alt=""> Daewoo</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl15_ctlTableData" class="hatchback saloon convertible 4x4 mpv estate active">
+				<div>
+					<a id="ctl15_lnkManufacturerNoJs" href="/brands/daihatsu/"><img id="ctl15_imgManufacturerNoJs" width="50" src="/image/brands/daihatsu.jpg" alt="Daihatsu">
+						<span>Daihatsu</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl15_imgManufacturer" width="50" src="/image/brands/daihatsu.jpg" alt=""> Daihatsu</p>
+				</div>
+			</td>
+			<td id="ctl16_ctlTableData" class="saloon hatchback mpv 4x4 estate convertible active">
+				<div>
+					<a id="ctl16_lnkManufacturerNoJs" href="/brands/dodge/"><img id="ctl16_imgManufacturerNoJs" width="50" src="/image/brands/dodge.jpg" alt="Dodge">
+						<span>Dodge</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl16_imgManufacturer" width="50" src="/image/brands/dodge.jpg" alt=""> Dodge</p>
+				</div>
+			</td>
+			<td id="ctl17_ctlTableData" class="coupe convertible active">
+				<div>
+					<a id="ctl17_lnkManufacturerNoJs" href="/brands/ferrari/"><img id="ctl17_imgManufacturerNoJs" width="50" src="/image/brands/FERRARI.jpg" alt="Ferrari">
+						<span>Ferrari</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl17_imgManufacturer" width="50" src="/image/brands/FERRARI.jpg" alt=""> Ferrari</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl18_ctlTableData" class="saloon hatchback convertible estate 4x4 coupe mpv active">
+				<div>
+					<a id="ctl18_lnkManufacturerNoJs" href="/brands/fiat/"><img id="ctl18_imgManufacturerNoJs" width="50" src="/image/brands/fiat.jpg" alt="Fiat">
+						<span>Fiat</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl18_imgManufacturer" width="50" src="/image/brands/fiat.jpg" alt=""> Fiat</p>
+				</div>
+			</td>
+			<td id="ctl19_ctlTableData" class="mpv hatchback coupe 4x4 estate convertible saloon active">
+				<div>
+					<a id="ctl19_lnkManufacturerNoJs" href="/brands/ford/"><img id="ctl19_imgManufacturerNoJs" width="50" src="/image/brands/FORD.jpg" alt="Ford">
+						<span>Ford</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl19_imgManufacturer" width="50" src="/image/brands/FORD.jpg" alt=""> Ford</p>
+				</div>
+			</td>
+			<td id="ctl20_ctlTableData" class="hatchback estate saloon coupe 4x4 convertible mpv active">
+				<div>
+					<a id="ctl20_lnkManufacturerNoJs" href="/brands/honda/"><img id="ctl20_imgManufacturerNoJs" width="50" src="/image/brands/honda.jpg" alt="Honda">
+						<span>Honda</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl20_imgManufacturer" width="50" src="/image/brands/honda.jpg" alt=""> Honda</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl21_ctlTableData" class="4x4 active">
+				<div>
+					<a id="ctl21_lnkManufacturerNoJs" href="/brands/hummer/"><img id="ctl21_imgManufacturerNoJs" width="50" src="/image/brands/hummer.jpg" alt="Hummer">
+						<span>Hummer</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl21_imgManufacturer" width="50" src="/image/brands/hummer.jpg" alt=""> Hummer</p>
+				</div>
+			</td>
+			<td id="ctl22_ctlTableData" class="hatchback saloon coupe estate mpv 4x4 active">
+				<div>
+					<a id="ctl22_lnkManufacturerNoJs" href="/brands/hyundai/"><img id="ctl22_imgManufacturerNoJs" width="50" src="/image/brands/hyundai.jpg" alt="Hyundai">
+						<span>Hyundai</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl22_imgManufacturer" width="50" src="/image/brands/hyundai.jpg" alt=""> Hyundai</p>
+				</div>
+			</td>
+			<td id="ctl23_ctlTableData" class="4x4 coupe saloon convertible active">
+				<div>
+					<a id="ctl23_lnkManufacturerNoJs" href="/brands/infiniti/"><img id="ctl23_imgManufacturerNoJs" width="50" src="/image/brands/Infiniti.jpg" alt="Infiniti">
+						<span>Infiniti</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl23_imgManufacturer" width="50" src="/image/brands/Infiniti.jpg" alt=""> Infiniti</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl24_ctlTableData" class="coupe 4x4 active">
+				<div>
+					<a id="ctl24_lnkManufacturerNoJs" href="/brands/isuzu/"><img id="ctl24_imgManufacturerNoJs" width="50" src="/image/brands/ISUZU.jpg" alt="Isuzu">
+						<span>Isuzu</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl24_imgManufacturer" width="50" src="/image/brands/ISUZU.jpg" alt=""> Isuzu</p>
+				</div>
+			</td>
+			<td id="ctl25_ctlTableData" class="4x4 convertible coupe saloon estate active">
+				<div>
+					<a id="ctl25_lnkManufacturerNoJs" href="/brands/jaguar/"><img id="ctl25_imgManufacturerNoJs" width="50" src="/image/brands/JAGUAR.jpg" alt="Jaguar">
+						<span>Jaguar</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl25_imgManufacturer" width="50" src="/image/brands/JAGUAR.jpg" alt=""> Jaguar</p>
+				</div>
+			</td>
+			<td id="ctl26_ctlTableData" class="4x4 active">
+				<div>
+					<a id="ctl26_lnkManufacturerNoJs" href="/brands/jeep/"><img id="ctl26_imgManufacturerNoJs" width="50" src="/image/brands/JEEP.jpg" alt="Jeep">
+						<span>Jeep</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl26_imgManufacturer" width="50" src="/image/brands/JEEP.jpg" alt=""> Jeep</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl27_ctlTableData" class="mpv hatchback estate saloon 4x4 active">
+				<div>
+					<a id="ctl27_lnkManufacturerNoJs" href="/brands/kia/"><img id="ctl27_imgManufacturerNoJs" width="50" src="/image/brands/kia.jpg" alt="Kia">
+						<span>Kia</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl27_imgManufacturer" width="50" src="/image/brands/kia.jpg" alt=""> Kia</p>
+				</div>
+			</td>
+			<td id="ctl28_ctlTableData" class="coupe active">
+				<div>
+					<a id="ctl28_lnkManufacturerNoJs" href="/brands/lamborghini/"><img id="ctl28_imgManufacturerNoJs" width="50" src="/image/brands/Lamborghini.jpg" alt="Lamborghini">
+						<span>Lamborghini</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl28_imgManufacturer" width="50" src="/image/brands/Lamborghini.jpg" alt=""> Lamborghini</p>
+				</div>
+			</td>
+			<td id="ctl29_ctlTableData" class="4x4 estate active">
+				<div>
+					<a id="ctl29_lnkManufacturerNoJs" href="/brands/land-rover/"><img id="ctl29_imgManufacturerNoJs" width="50" src="/image/brands/LAND ROVER.jpg" alt="Land Rover">
+						<span>Land Rover</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl29_imgManufacturer" width="50" src="/image/brands/LAND ROVER.jpg" alt=""> Land Rover</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl30_ctlTableData" class="hatchback saloon estate convertible 4x4 coupe active">
+				<div>
+					<a id="ctl30_lnkManufacturerNoJs" href="/brands/lexus/"><img id="ctl30_imgManufacturerNoJs" width="50" src="/image/brands/lexus.jpg" alt="Lexus">
+						<span>Lexus</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl30_imgManufacturer" width="50" src="/image/brands/lexus.jpg" alt=""> Lexus</p>
+				</div>
+			</td>
+			<td id="ctl31_ctlTableData" class="convertible coupe active">
+				<div>
+					<a id="ctl31_lnkManufacturerNoJs" href="/brands/lotus/"><img id="ctl31_imgManufacturerNoJs" width="50" src="/image/brands/LOTUS.jpg" alt="Lotus">
+						<span>Lotus</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl31_imgManufacturer" width="50" src="/image/brands/LOTUS.jpg" alt=""> Lotus</p>
+				</div>
+			</td>
+			<td id="ctl32_ctlTableData" class="coupe saloon convertible active">
+				<div>
+					<a id="ctl32_lnkManufacturerNoJs" href="/brands/maserati/"><img id="ctl32_imgManufacturerNoJs" width="50" src="/image/brands/MASERATI.jpg" alt="Maserati">
+						<span>Maserati</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl32_imgManufacturer" width="50" src="/image/brands/MASERATI.jpg" alt=""> Maserati</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl33_ctlTableData" class="saloon active">
+				<div>
+					<a id="ctl33_lnkManufacturerNoJs" href="/brands/maybach/"><img id="ctl33_imgManufacturerNoJs" width="50" src="/image/brands/maybach.jpg" alt="Maybach">
+						<span>Maybach</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl33_imgManufacturer" width="50" src="/image/brands/maybach.jpg" alt=""> Maybach</p>
+				</div>
+			</td>
+			<td id="ctl34_ctlTableData" class="hatchback saloon estate mpv coupe 4x4 convertible active">
+				<div>
+					<a id="ctl34_lnkManufacturerNoJs" href="/brands/mazda/"><img id="ctl34_imgManufacturerNoJs" width="50" src="/image/brands/mazda.jpg" alt="Mazda">
+						<span>Mazda</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl34_imgManufacturer" width="50" src="/image/brands/mazda.jpg" alt=""> Mazda</p>
+				</div>
+			</td>
+			<td id="ctl35_ctlTableData" class="coupe active">
+				<div>
+					<a id="ctl35_lnkManufacturerNoJs" href="/brands/mclaren/"><img id="ctl35_imgManufacturerNoJs" width="50" src="/image/brands/mclarenlogo.jpg" alt="McLaren">
+						<span>McLaren</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl35_imgManufacturer" width="50" src="/image/brands/mclarenlogo.jpg" alt=""> McLaren</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl36_ctlTableData" class="saloon estate hatchback coupe convertible 4x4 mpv active">
+				<div>
+					<a id="ctl36_lnkManufacturerNoJs" href="/brands/mercedes-benz/"><img id="ctl36_imgManufacturerNoJs" width="50" src="/image/brands/mercedes.jpg" alt="Mercedes-Benz">
+						<span>Mercedes-Benz</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl36_imgManufacturer" width="50" src="/image/brands/mercedes.jpg" alt=""> Mercedes-Benz</p>
+				</div>
+			</td>
+			<td id="ctl37_ctlTableData" class="convertible coupe hatchback saloon estate active">
+				<div>
+					<a id="ctl37_lnkManufacturerNoJs" href="/brands/mg/"><img id="ctl37_imgManufacturerNoJs" width="50" src="/image/brands/MG.jpg" alt="MG">
+						<span>MG</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl37_imgManufacturer" width="50" src="/image/brands/MG.jpg" alt=""> MG</p>
+				</div>
+			</td>
+			<td id="ctl38_ctlTableData" class="saloon hatchback convertible active">
+				<div>
+					<a id="ctl38_lnkManufacturerNoJs" href="/brands/mg-motor-uk/"><img id="ctl38_imgManufacturerNoJs" width="50" src="/image/brands/mg_motor_uk.jpg" alt="MG Motor UK">
+						<span>MG Motor UK</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl38_imgManufacturer" width="50" src="/image/brands/mg_motor_uk.jpg" alt=""> MG Motor UK</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl39_ctlTableData" class="estate convertible hatchback coupe active">
+				<div>
+					<a id="ctl39_lnkManufacturerNoJs" href="/brands/mini/"><img id="ctl39_imgManufacturerNoJs" width="50" src="/image/brands/MINI.jpg" alt="MINI">
+						<span>MINI</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl39_imgManufacturer" width="50" src="/image/brands/MINI.jpg" alt=""> MINI</p>
+				</div>
+			</td>
+			<td id="ctl40_ctlTableData" class="coupe 4x4 hatchback saloon estate mpv active">
+				<div>
+					<a id="ctl40_lnkManufacturerNoJs" href="/brands/mitsubishi/"><img id="ctl40_imgManufacturerNoJs" width="50" src="/image/brands/mitsubishi-cars-logo-emblem.jpg" alt="Mitsubishi">
+						<span>Mitsubishi</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl40_imgManufacturer" width="50" src="/image/brands/mitsubishi-cars-logo-emblem.jpg" alt=""> Mitsubishi</p>
+				</div>
+			</td>
+			<td id="ctl41_ctlTableData" class="hatchback convertible coupe estate active">
+				<div>
+					<a id="ctl41_lnkManufacturerNoJs" href="/brands/morgan/"><img id="ctl41_imgManufacturerNoJs" width="50" src="/image/brands/morgan.jpg" alt="Morgan">
+						<span>Morgan</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl41_imgManufacturer" width="50" src="/image/brands/morgan.jpg" alt=""> Morgan</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl42_ctlTableData" class="coupe saloon estate convertible hatchback mpv 4x4 active">
+				<div>
+					<a id="ctl42_lnkManufacturerNoJs" href="/brands/nissan/"><img id="ctl42_imgManufacturerNoJs" width="50" src="/image/brands/NISSAN.jpg" alt="Nissan">
+						<span>Nissan</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl42_imgManufacturer" width="50" src="/image/brands/NISSAN.jpg" alt=""> Nissan</p>
+				</div>
+			</td>
+			<td id="ctl43_ctlTableData" class="coupe active">
+				<div>
+					<a id="ctl43_lnkManufacturerNoJs" href="/brands/noble/"><img id="ctl43_imgManufacturerNoJs" width="50" src="/image/brands/noble.jpg" alt="Noble">
+						<span>Noble</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl43_imgManufacturer" width="50" src="/image/brands/noble.jpg" alt=""> Noble</p>
+				</div>
+			</td>
+			<td id="ctl44_ctlTableData" class="hatchback estate active">
+				<div>
+					<a id="ctl44_lnkManufacturerNoJs" href="/brands/perodua/"><img id="ctl44_imgManufacturerNoJs" width="50" src="/image/brands/PERODUA.jpg" alt="Perodua">
+						<span>Perodua</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl44_imgManufacturer" width="50" src="/image/brands/PERODUA.jpg" alt=""> Perodua</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl45_ctlTableData" class="hatchback 4x4 convertible estate saloon coupe mpv active">
+				<div>
+					<a id="ctl45_lnkManufacturerNoJs" href="/brands/peugeot/"><img id="ctl45_imgManufacturerNoJs" width="50" src="/image/brands/PeugeotBadge.jpg" alt="Peugeot">
+						<span>Peugeot</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl45_imgManufacturer" width="50" src="/image/brands/PeugeotBadge.jpg" alt=""> Peugeot</p>
+				</div>
+			</td>
+			<td id="ctl46_ctlTableData" class="coupe convertible 4x4 saloon active">
+				<div>
+					<a id="ctl46_lnkManufacturerNoJs" href="/brands/porsche/"><img id="ctl46_imgManufacturerNoJs" width="50" src="/image/brands/PORSCHE.jpg" alt="Porsche">
+						<span>Porsche</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl46_imgManufacturer" width="50" src="/image/brands/PORSCHE.jpg" alt=""> Porsche</p>
+				</div>
+			</td>
+			<td id="ctl47_ctlTableData" class="hatchback coupe estate saloon active">
+				<div>
+					<a id="ctl47_lnkManufacturerNoJs" href="/brands/proton/"><img id="ctl47_imgManufacturerNoJs" width="50" src="/image/brands/PROTON.jpg" alt="Proton">
+						<span>Proton</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl47_imgManufacturer" width="50" src="/image/brands/PROTON.jpg" alt=""> Proton</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl48_ctlTableData" class="hatchback saloon estate convertible coupe mpv 4x4 active">
+				<div>
+					<a id="ctl48_lnkManufacturerNoJs" href="/brands/renault/"><img id="ctl48_imgManufacturerNoJs" width="50" src="/image/brands/renault.jpg" alt="Renault">
+						<span>Renault</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl48_imgManufacturer" width="50" src="/image/brands/renault.jpg" alt=""> Renault</p>
+				</div>
+			</td>
+			<td id="ctl49_ctlTableData" class="saloon convertible coupe active">
+				<div>
+					<a id="ctl49_lnkManufacturerNoJs" href="/brands/rolls-royce/"><img id="ctl49_imgManufacturerNoJs" width="50" src="/image/brands/rolls royce.jpg" alt="Rolls-Royce">
+						<span>Rolls-Royce</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl49_imgManufacturer" width="50" src="/image/brands/rolls royce.jpg" alt=""> Rolls-Royce</p>
+				</div>
+			</td>
+			<td id="ctl50_ctlTableData" class="hatchback convertible saloon coupe estate active">
+				<div>
+					<a id="ctl50_lnkManufacturerNoJs" href="/brands/rover/"><img id="ctl50_imgManufacturerNoJs" width="50" src="/image/brands/ROVER.jpg" alt="Rover">
+						<span>Rover</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl50_imgManufacturer" width="50" src="/image/brands/ROVER.jpg" alt=""> Rover</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl51_ctlTableData" class="hatchback saloon convertible coupe estate active">
+				<div>
+					<a id="ctl51_lnkManufacturerNoJs" href="/brands/saab/"><img id="ctl51_imgManufacturerNoJs" width="50" src="/image/brands/SAAB.jpg" alt="Saab">
+						<span>Saab</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl51_imgManufacturer" width="50" src="/image/brands/SAAB.jpg" alt=""> Saab</p>
+				</div>
+			</td>
+			<td id="ctl52_ctlTableData" class="mpv 4x4 hatchback saloon estate coupe active">
+				<div>
+					<a id="ctl52_lnkManufacturerNoJs" href="/brands/seat/"><img id="ctl52_imgManufacturerNoJs" width="50" src="/image/brands/seat.jpg" alt="SEAT">
+						<span>SEAT</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl52_imgManufacturer" width="50" src="/image/brands/seat.jpg" alt=""> SEAT</p>
+				</div>
+			</td>
+			<td id="ctl53_ctlTableData" class="hatchback saloon estate 4x4 coupe active">
+				<div>
+					<a id="ctl53_lnkManufacturerNoJs" href="/brands/skoda/"><img id="ctl53_imgManufacturerNoJs" width="50" src="/image/brands/skoda_new.jpg" alt="Skoda">
+						<span>Skoda</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl53_imgManufacturer" width="50" src="/image/brands/skoda_new.jpg" alt=""> Skoda</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl54_ctlTableData" class="coupe convertible hatchback active">
+				<div>
+					<a id="ctl54_lnkManufacturerNoJs" href="/brands/smart/"><img id="ctl54_imgManufacturerNoJs" width="50" src="/image/brands/smart.jpg" alt="Smart">
+						<span>Smart</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl54_imgManufacturer" width="50" src="/image/brands/smart.jpg" alt=""> Smart</p>
+				</div>
+			</td>
+			<td id="ctl55_ctlTableData" class="4x4 mpv pick-up active">
+				<div>
+					<a id="ctl55_lnkManufacturerNoJs" href="/brands/ssangyong/"><img id="ctl55_imgManufacturerNoJs" width="50" src="/image/brands/ssangyong.jpg" alt="SsangYong">
+						<span>SsangYong</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl55_imgManufacturer" width="50" src="/image/brands/ssangyong.jpg" alt=""> SsangYong</p>
+				</div>
+			</td>
+			<td id="ctl56_ctlTableData" class="saloon estate hatchback 4x4 coupe active">
+				<div>
+					<a id="ctl56_lnkManufacturerNoJs" href="/brands/subaru/"><img id="ctl56_imgManufacturerNoJs" width="50" src="/image/brands/subaru.jpg" alt="Subaru">
+						<span>Subaru</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl56_imgManufacturer" width="50" src="/image/brands/subaru.jpg" alt=""> Subaru</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl57_ctlTableData" class="hatchback saloon estate convertible 4x4 active">
+				<div>
+					<a id="ctl57_lnkManufacturerNoJs" href="/brands/suzuki/"><img id="ctl57_imgManufacturerNoJs" width="50" src="/image/brands/suzukii.jpg" alt="Suzuki">
+						<span>Suzuki</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl57_imgManufacturer" width="50" src="/image/brands/suzukii.jpg" alt=""> Suzuki</p>
+				</div>
+			</td>
+			<td id="ctl58_ctlTableData" class="saloon convertible active">
+				<div>
+					<a id="ctl58_lnkManufacturerNoJs" href="/brands/tesla/"><img id="ctl58_imgManufacturerNoJs" width="50" src="/image/brands/teslalogonew.jpg" alt="Tesla">
+						<span>Tesla</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl58_imgManufacturer" width="50" src="/image/brands/teslalogonew.jpg" alt=""> Tesla</p>
+				</div>
+			</td>
+			<td id="ctl59_ctlTableData" class="4x4 hatchback estate saloon mpv coupe convertible active">
+				<div>
+					<a id="ctl59_lnkManufacturerNoJs" href="/brands/toyota/"><img id="ctl59_imgManufacturerNoJs" width="50" src="/image/brands/toyota.jpg" alt="Toyota">
+						<span>Toyota</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl59_imgManufacturer" width="50" src="/image/brands/toyota.jpg" alt=""> Toyota</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl60_ctlTableData" class="coupe convertible active">
+				<div>
+					<a id="ctl60_lnkManufacturerNoJs" href="/brands/tvr/"><img id="ctl60_imgManufacturerNoJs" width="50" src="/image/brands/TVR.jpg" alt="TVR">
+						<span>TVR</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl60_imgManufacturer" width="50" src="/image/brands/TVR.jpg" alt=""> TVR</p>
+				</div>
+			</td>
+			<td id="ctl61_ctlTableData" class="hatchback estate 4x4 convertible saloon coupe mpv active">
+				<div>
+					<a id="ctl61_lnkManufacturerNoJs" href="/brands/vauxhall/"><img id="ctl61_imgManufacturerNoJs" width="50" src="/image/brands/VAUXHALL.jpg" alt="Vauxhall">
+						<span>Vauxhall</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl61_imgManufacturer" width="50" src="/image/brands/VAUXHALL.jpg" alt=""> Vauxhall</p>
+				</div>
+			</td>
+			<td id="ctl62_ctlTableData" class="hatchback convertible saloon estate mpv coupe 4x4 active">
+				<div>
+					<a id="ctl62_lnkManufacturerNoJs" href="/brands/volkswagen/"><img id="ctl62_imgManufacturerNoJs" width="50" src="/image/brands/VW.jpg" alt="Volkswagen">
+						<span>Volkswagen</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl62_imgManufacturer" width="50" src="/image/brands/VW.jpg" alt=""> Volkswagen</p>
+				</div>
+			</td>
+
+	    </tr>
+
+		<tr>
+			<td id="ctl63_ctlTableData" class="saloon estate hatchback coupe convertible 4x4 active">
+				<div>
+					<a id="ctl63_lnkManufacturerNoJs" href="/brands/volvo/"><img id="ctl63_imgManufacturerNoJs" width="50" src="/image/brands/VOLVO.jpg" alt="Volvo">
+						<span>Volvo</span>
+					</a>
+					<p class="m0 fs10" style="display:none"><img id="ctl63_imgManufacturer" width="50" src="/image/brands/VOLVO.jpg" alt=""> Volvo</p>
+				</div>
+			</td>
+	</tr></tbody>
+	</table>
+	<div class="container">
+
+	<ul class="brands clearfix">
+		
+
+		<%@brands.each do |brand|%>
+			<li>
+				<div>
+				<%=link_to brand_path(brand),:class=>"name #{brand.status}" do%>
+					<%=brand.brand_name%>
+					<%=image_tag '/assets/store/hot2.gif' if brand.status=='special'%>
+					<%=image_tag '/assets/store/new.png' if brand.status=='new'%>
+				<%end%>
+				</div>
+				<div>
+					<%=link_to truncate2(brand.brand_desc.html_safe,:length=>15),brand_path(brand),:class=>"desc",:title=>brand.brand_desc.html_safe%>
+				</div>
+				<%if brand.status == 'coming'%>
+				<div><%=image_tag '/assets/store/comingsoon2.gif'%></div>
+				<%end%>
+
+			</li>
+		<%end%>
+	</ul>
+</div>
+	</div>
+				
+</div>
+
+
+
+
+<%=javascript_include_tag "bootstrap-transition","bootstrap-carousel"%>
+

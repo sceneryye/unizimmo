@@ -1,0 +1,97 @@
+    <section class="main-section" style="display:block;margin:top30px;">
+      <div class="row">
+      <div class="columns small-12">
+      <ul data-orbit data-options="timer_speed: 3000;slide_number: false">
+        <li>
+          <img src="image/slide1.jpg" alt="slide 1" />
+          <div class="orbit-caption">
+          </div>
+        </li>
+        <li class="active">
+          <img src="image/slide2.jpg" alt="slide 2" />
+          <div class="orbit-caption">
+          </div>
+        </li>
+        <li class="active">
+          <img src="image/slide3.jpg" alt="slide 3" />
+          <div class="orbit-caption">
+            
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+      <div class="row show-for-medium-up">
+        <div class="col-12">
+          <ul id="myRoundabout">
+          <%@goods.each do |goods|%>
+            <li>
+              <div class="prod_holder"> <%=link_to good_path(goods.bn), :target=>"_blank" do %>
+              <%=image_tag goods.list_default_pic,:alt=>goods.name,:style=>"width:100%"%> <%end%>
+                <h3><%=goods.name%></h3>
+              </div>
+              <span class="pricetag">¥ <%=(goods.price/10000).to_i%>万</span> </li>
+           <%end%>
+          </ul>
+        </div>
+      </div>
+      <div class="row banner" style="display:none" >
+        <div class="columns small-12 large-6"> 
+            <a href="#"><img src="image/banner1.jpg" alt="美国房车" /></a>
+          </div>
+         <div class="columns small-12 large-6"> 
+            <a href="#"><img src="image/banner2.jpg" alt="美国房车" /></a>
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="columns small-12">
+          <h2 class="heading-title"><span>最新上架</span></h2> 
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="columns small-12">
+          <div class="box-content">
+            <div class="box-product">
+              <ul class="box clearing-thumbs medium-block-grid-4 small-block-grid-1">
+               <%@goods.each do |goods|%>
+                <li> 
+                  <div class="row">
+                  <div class="columns medium-12 small-5"> 
+                    <div class="prod_hold"> 
+                      <%=link_to good_path(goods.bn), :target=>"_blank",:class=>"wrap_link" do %>
+                        <span class="image"><%=image_tag goods.list_default_pic,:alt=>goods.name,:class=>"default"%></span> 
+                      <%end%>
+                      <div class="pricetag_small show-for-medium-up">
+                        <span class="new_price">¥ <%=(goods.price/10000).to_i%>万</span> 
+                        <span class="old_price">¥ <%=(goods.mktprice/10000).to_i%>万</span> 
+                      </div>
+                      <div class="info">
+                        <p><%=image_tag goods.list_default_pic,:alt=>goods.name,:class=>"default"%></p>
+                        <h3><%=goods.name%></h3>
+                        <p><%=goods.desc.html_safe if goods.desc%></p>
+                        <a class="add_to_cart_small" href="#">加入购物车</a> 
+                        <a class="wishlist_small" href="#">加入收藏夹</a> 
+                        <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">加入产品对比</a> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="columns small-7 show-for-small">
+                    <div class="info">
+                        <h3><%=goods.name%></h3>
+                        <span class="new_price">¥ <%=(goods.price/10000).to_i%>万</span> 
+                        <!-- <span class="old_price">¥ <%=(goods.mktprice/10000).to_i%>万</span> -->
+                        <p><a class="wishlist_small" href="#">收藏</a> &nbsp;
+                        <a href="/compare/add?goods_id=<%=goods.goods_id%>" class="add_to_compare" data-method="put" data-remote="true" rel="nofollow">产品对比</a> 
+                      </p>
+                    </div>
+                  </div>
+                  </div>
+                </li>
+               <%end%>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </section>

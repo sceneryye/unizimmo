@@ -1,0 +1,77 @@
+  <!-- CONTENT -->
+  <div class="row">
+  <div class="columns small-12"%>
+  <div id="content_holder">
+    <div class="inner">
+      <div class="breadcrumb"> <a href="/">首页</a> » <a href="/member">个人中心</a> »产品比较</div>
+      <h2 class="heading-title"><span>产品比较</span></h2>
+      <div id="content">
+        <table class="compare-info">
+          <thead>
+            <tr>
+              <td colspan="4">详细介绍</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>品名</td>
+              <%@compare.each do |compare|%>
+              <td class="name"><a href="/products/<%=compare.good.bn%>" target="_blank"><%=compare.good.name%></a></td>
+              <%end%>
+            </tr>
+            <tr class="even">
+              <td>图片</td>
+              <%@compare.each do |compare|%>
+              <td class="image"><img src="<%=compare.good.medium_pic%>" alt="<%=compare.good.name%>" /></td>
+              <%end%>
+            </tr>
+            <tr>
+              <td>价格</td>
+              <%@compare.each do |compare|%>
+              <td> ¥<%=compare.good.price%> </td>
+              <%end%>
+            </tr>          
+            <tr>
+              <td>品牌</td>
+              <%@compare.each do |compare|%>
+              <td><%=compare.good.brand.brand_name if compare.good.brand_id%></td>
+              <%end%>
+            </tr>
+            <tr style="display:none">
+              <td>评价</td>
+              <td><img alt="Based on 0 reviews." src="image/stars-2.png"/><br/>
+                3个点评</td>
+              <td><img alt="Based on 0 reviews." src="image/stars-5.png"/><br/>
+                12个点评.</td>
+              <td><img alt="Based on 0 reviews." src="image/stars-3.png"/><br/>
+                7个点评.</td>
+            </tr>
+            <tr class="even">
+              <td>简介</td>
+              <%@compare.each do |compare|%>
+              <td class="description"> <%=compare.good.desc%></td>
+              <%end%>
+            </tr> 
+          </tbody>
+          <tbody>
+            <tr style="display:none">
+              <td></td>
+              <%@compare.each do |compare|%>
+              <td><a class="button" href="#"><span>加入购物车</span></a></td>
+              <%end%>
+            </tr>
+            <tr>
+              <td></td>
+              <%@compare.each do |compare|%>
+              <td><input type="hidden" value="43" name="remove"/>
+                <a href="/compare/destory?goods_id=<%=compare.goods_id%>"><span>移除</span></a></td>
+              <%end%>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <!-- END OF CONTENT --> 
